@@ -1,0 +1,59 @@
+/* Simple beginner CSS - minimal effects */
+* { box-sizing: border-box; }
+body {
+	font-family: Segoe UI, Roboto, Arial, sans-serif;
+	margin: 0;
+	padding: 18px;
+	/* fallback color */
+	background-color: #f4f7fb;
+	/* simple nature background (online) - will load a random nature photo */
+	background-image: url('https://wallpapercave.com/wp/uUqxVHp.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	color: #222;
+}
+header h1 {
+	text-align: center;
+	margin: 0 0 14px;
+	font-weight: 600;
+}
+
+/* Basic responsive grid */
+.cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 16px;
+	max-width: 1200px;
+	margin: 0 auto;
+	min-height: calc(100vh - 72px);
+}
+
+.card {
+	background: #fff;
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+.card img {
+	width: 100%;
+	height: 160px;
+	object-fit: cover;
+	display: block;
+}
+.card-body {
+	padding: 12px;
+	flex: 1;
+}
+.card h2 { margin: 0 0 8px; font-size: 1.05rem; color: #111; }
+.card p { margin: 0; color: #555; line-height: 1.4; font-size: 0.95rem; }
+
+/* Small screens */
+@media (max-width: 420px) {
+	.card img { height: 120px; }
+	body { padding: 12px; }
+	.cards { min-height: auto; }
+}
+
